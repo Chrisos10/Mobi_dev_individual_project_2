@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:trivia_que_app/Screens/categorypage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -30,7 +31,7 @@ class _HomePageState extends State<HomePage> {
                       fontSize: 36,
                       // fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: Color.fromRGBO(0, 106, 103, 1),
                     ),
                   ), 
                 ],
@@ -81,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => CategoryPage()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromRGBO(0, 69, 67, 1),
