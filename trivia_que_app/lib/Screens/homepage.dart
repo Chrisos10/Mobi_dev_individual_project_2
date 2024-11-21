@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:trivia_que_app/Screens/categorypage.dart';
+import 'package:trivia_que_app/Screens/questionpage.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -82,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => CategoryPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => QuestionPage()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromRGBO(0, 69, 67, 1),
