@@ -19,17 +19,17 @@ Encourages replayability and allows users to share their results.
 Purpose: The landing page for the app.
 
 **Functionalities:**
-Displays the app logo and a "Start Quiz" button.
-Navigates to the Options Page.
+- Displays the app logo and a "Start Quiz" button.
+- Navigates to the Options Page.
 
 3. Questions Page
 Purpose: Displays the quiz questions and tracks progress.
 
 **Functionalities:**
 
-Dynamically fetches and displays trivia questions.
-Highlights correct or incorrect answers using the options page.
-Tracks question progress and user performance.
+- Dynamically fetches and displays trivia questions.
+- Highlights correct or incorrect answers using the options page.
+- Tracks question progress and user performance.
 
 4. Completed Screen
 Purpose: Displays quiz results and offers replay/share options.
