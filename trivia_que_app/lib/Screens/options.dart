@@ -1,37 +1,84 @@
 import 'package:flutter/material.dart';
 
 class OptionsPage extends StatelessWidget {
-  const OptionsPage({super.key});
+  // Text to display for the option
+  final String option;
 
-  final String option = 'Option Text';
+  // Indicates if this option is currently selected
+  final bool isSelected;
+
+  // Callback triggered when the option is tapped
+  final VoidCallback onTap;
+
+  const OptionsPage({
+    super.key,
+    required this.option,
+    required this.isSelected,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          height: 48, width: 240,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            border: Border.all(width: 3, color: Colors.red)
-          ),
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 18),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(option, style: const TextStyle(fontWeight: FontWeight.bold),),
-                  Radio(value: option, groupValue: 2, onChanged: (val){})
-                ],
-              ),
-            ),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        decoration: BoxDecoration(
+          color: isSelected
+              ? const Color.fromRGBO(0, 69, 67, 1).withOpacity(0.1)
+              : Colors.white,
+          borderRadius: BorderRadius.circular(30),
+          border: Border.all(
+            color: const Color.fromRGBO(0, 69, 67, 1),
+            width: 2,
           ),
         ),
-        SizedBox(
-          height: 10,
-        )
-      ],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // Displays the option text
+            Flexible(
+              child: Text(
+                option,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Color.fromRGBO(0, 69, 67, 1),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+
+            // Circle indicator for selection status
+            Container(
+              height: 20,
+              width: 20,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: const Color.fromRGBO(0, 69, 67, 1),
+                  width: 2,
+                ),
+                color: isSelected
+                    ? const Color.fromRGBO(0, 69, 67, 1)
+                    : Colors.transparent,
+              ),
+              // Checkmark icon displayed if the option is selected
+              child: isSelected
+                  ? const Center(
+                      child: Icon(
+                        Icons.check,
+                        color: Colors.white,
+                        size: 14,
+                      ),
+                    )
+                  : null,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

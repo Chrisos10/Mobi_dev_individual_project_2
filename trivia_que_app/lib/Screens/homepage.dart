@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                   text: const TextSpan(
                     children: [
                       TextSpan(
-                        text: 'Play To Gain Your Knowledge\n\n',
+                        text: 'Challenge Your Knowledge, Fun Your Mind!\n\n',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       TextSpan(
                         text:
-                            '"They have downloaded Gmail and seems to be working for now. I also believe it’s important for every member."',
+                            "Dive into a world of trivia with a quiz app! Whether you're a casual learner or a competitive player, Trivia app offers a diverse range of questions across various categories and difficulty levels. ",
                         style: TextStyle(
                           fontSize: 16,
                           fontStyle: FontStyle.italic,
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => QuestionPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const QuestionPage()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromRGBO(0, 69, 67, 1),
